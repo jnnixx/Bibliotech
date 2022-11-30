@@ -16,7 +16,6 @@ O cliente possui uma biblioteca e tem dificuldade em manter o controle de empré
 
 ## Tecnologias usadas
 
-* Tecnologias
 * Angular;
 * Angular Material;
 * Firebase.
