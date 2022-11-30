@@ -20,10 +20,10 @@ O cliente possui uma biblioteca e tem dificuldade em manter o controle de empré
 * Angular Material;
 * Firebase.
 
-## Solicitador por:
+## Solicitador por
 
 * [Professor Gabriel Braga](https://github.com/gabriel-soulcode)
 
-## Bootcamp:
+## Bootcamp
 
 * [SoulCode Academy](https://soulcodeacademy.org) 
