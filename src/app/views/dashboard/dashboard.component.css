@@ -1,0 +1,39 @@
+.container {
+    height: 100vh;
+    padding: 90px;
+    background-image: linear-gradient(RGB(255 115 115), rgb(246,196,140), rgb(253,221,189) );
+}
+
+.table {
+    width: 100%;
+}
+
+.table-container {
+    height: 70vh;
+    overflow: auto;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+}
+
+.capa {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.btn-new {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    background-color: rgb(62,66,110);
+}
+
+.button-capa {
+    width: 95px;
+    height: 95px;
+    border-radius: 50px;
+    backface-visibility: hidden;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+}

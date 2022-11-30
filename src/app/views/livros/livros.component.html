@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="container">
+    <h1>Livros</h1>
+    <div class="table-container mat-elevation-z4" tabindex="0" style="width:90%">
+        <table mat-table class="table table-hover" [dataSource]="dataSource" style="width:100%">
+
+            <ng-container matColumnDef="titulo">
+                <th mat-header-cell *matHeaderCellDef> Título </th>
+                <td mat-cell *matCellDef="let livro"> {{livro.titulo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="categoria">
+                <th mat-header-cell *matHeaderCellDef> Categoria </th>
+                <td mat-cell *matCellDef="let livro"> {{livro.categoria}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="autor">
+                <th mat-header-cell *matHeaderCellDef> Autor </th>
+                <td mat-cell *matCellDef="let livro"> {{livro.autor}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="isbn">
+                <th mat-header-cell *matHeaderCellDef> ISBN </th>
+                <td mat-cell *matCellDef="let livro"> {{livro.isbn}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="excluir">
+                <th mat-header-cell *matHeaderCellDef> Excluir </th>
+                <td mat-cell *matCellDef="let livro">
+                    <button mat-icon-button (click)="deleteBook(livro.id)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="capa">
+                <th mat-header-cell *matHeaderCellDef> Capa </th>
+                <td mat-cell *matCellDef="let livro"> <img [src]="livro.capa" alt="capa" class="capa"></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    <form [formGroup]="formAdicionarLivro" class="form-container">
+
+        <div class="field">
+            <mat-form-field  appearance="outline">
+                <input type="text" matInput placeholder="Título" formControlName="titulo">
+            </mat-form-field>
+
+            <mat-form-field  appearance="outline">
+                <input type="text" matInput placeholder="Categoria" formControlName="categoria">
+            </mat-form-field>
+
+            <mat-form-field  appearance="outline">
+                <input type="text" matInput placeholder="Capa" formControlName="capa">
+            </mat-form-field>
+    
+            <mat-form-field  appearance="outline">
+                <input type="text" matInput placeholder="Autor" formControlName="autor">
+            </mat-form-field>
+
+            <mat-form-field  appearance="outline">
+                <input type="text" matInput placeholder="ISBN" formControlName="isbn">
+            </mat-form-field>
+            <button style="background-color:rgb(62,66,110); color: white;"  mat-raised-button (click)="createBook()">Adicionar</button>
+        </div>
+    </form>
+</div>

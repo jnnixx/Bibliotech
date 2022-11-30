@@ -1,0 +1,14 @@
+<main class="html">
+    <div class="container">
+        <div class="login">
+            <h2>Inscrever-se</h2>
+            <form [formGroup]="formInscrever">
+                <input type="email" placeholder="E-mail" formControlName="email">
+                <input type="password" placeholder="Senha" formControlName="senha">
+            </form>
+            <button type="submit" (click)="createUserEmailAndPassword()">Inscrever-me</button>
+            <button (click)="signInGoogle()"><img src="../../../assets/google.png" alt="google" class="image-google"></button>
+            <a routerLink="/login">Voltar para o login</a>
+        </div>
+    </div>
+</main>

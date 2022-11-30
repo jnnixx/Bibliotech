@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Painel de Controle</h1>
+    <section class="table-container mat-elevation-z8" tabindex="0">
+        <table mat-table [dataSource]="dataSource" class="table">
+
+            <ng-container matColumnDef="leitor">
+                <th mat-header-cell *matHeaderCellDef> Leitor </th>
+                <td mat-cell *matCellDef="let leitor"> {{leitor.leitor}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="titulo">
+                <th mat-header-cell *matHeaderCellDef> Título </th>
+                <td mat-cell *matCellDef="let leitor"> {{leitor.livro.titulo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dataEmprestimo">
+                <th mat-header-cell *matHeaderCellDef> Data de Empréstimo </th>
+                <td mat-cell *matCellDef="let leitor"> {{leitor.dataEmprestimo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let leitor"> {{leitor.status}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="excluir">
+                <th mat-header-cell *matHeaderCellDef> Excluir </th>
+                <td mat-cell *matCellDef="let livro">
+                    <button mat-icon-button (click)="deleteLivro(livro.id)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="editar">
+                <th mat-header-cell *matHeaderCellDef> Editar </th>
+                <td mat-cell *matCellDef="let leitor">
+                    <a mat-icon-button [routerLink]="['/dashboard/editar_emprestimo', leitor.id]">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="capa">
+                <th mat-header-cell *matHeaderCellDef> Capa </th>
+                <td mat-cell *matCellDef="let emprestimo"><button mat-raised-button matBadgePosition="below" (click)="openDetalhes(emprestimo.livro)"><img [src]="emprestimo.livro.capa" alt="capa" class="capa"></button></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </section>
+
+    <a mat-fab class="btn-new" routerLink="/novo_emprestimo">
+        <i class="material-icons">add</i>
+    </a>
+</div>
